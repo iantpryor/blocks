@@ -8,9 +8,9 @@
         var height = 720;
         var blockSize = 16;
     
-        document.getElementById("startbtn").onclick = paintblock(16,16);
+        document.getElementById("startbtn").onclick = paintblock;
         //paint the map
-        function paintblock(x,y) {
+        function paintblock() {
             for(var i = 0; i < blockSize; i++) {
                 for(var j = 0; j< blockSize; j++) {
                     c.fillStyle = "#000000";
