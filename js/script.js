@@ -8,7 +8,7 @@
         var height = 720;
         var blockSize = 16;
     
-        document.getElementById("startbtn").onclick = paintblock(0,0);
+        document.getElementById("startbtn").onclick = paintblock(16,16);
         //paint the map
         function paintblock(x,y) {
             for(var i = 0; i < blockSize; i++) {
