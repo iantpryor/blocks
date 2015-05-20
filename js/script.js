@@ -10,6 +10,23 @@
     
         document.getElementById("startbtn").onclick = paintscreen;
         
+        document.onkeypress = myKeyPress(event);
+        
+        function myKeyPress(e){
+
+            var keynum;
+
+            if(window.event){ // IE					
+            	keynum = e.keyCode;
+            }else
+                if(e.which){ // Netscape/Firefox/Opera					
+            		keynum = e.which;
+                 }
+            alert(String.fromCharCode(keynum));
+        }
+        
+        
+        
         //paint a block
         function paintblock(x, y) {
             for(var i = 0; i < blockSize; i++) {
