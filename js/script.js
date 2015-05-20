@@ -4,21 +4,17 @@
         //get the canvas
         var canvas = document.getElementById("mapcanvas");
         var c = canvas.getContext("2d");
-        var width = 1280;
-        var height = 720;
+        var width = 720;
+        var height = ;
         var blockSize = 16;
     
+        document.getElementById("startbtn").onclick = paintblock(0,0);
         //paint the map
-        function paint() {
+        function paintblock(x,y) {
             for(var i = 0; i < width; i++) {
-                for(var j = 0; j < height; j++) {
-                    if(map[i][j] == 1) {
-                        c.fillStyle = "#000000";
-                        c.fillRect(i, j, 1, 1);
-                    } else {
-                        c.fillStyle = "#FFFFFF";
-                        c.fillRect(i, j, 1, 1);
-                    }
+                for(var j = 0; j< height; j++) {
+                    c.fillStyle = "#000000";
+                    c.fillRect(i, j, 1, 1);
                 }
             }
         }
