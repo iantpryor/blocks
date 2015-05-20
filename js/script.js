@@ -4,8 +4,8 @@
         //get the canvas
         var canvas = document.getElementById("mapcanvas");
         var c = canvas.getContext("2d");
-        var width = 1280;
-        var height = 720;
+        var width = 512;
+        var height = 288;
         var blockSize = 16;
     
         document.getElementById("startbtn").onclick = paintblock;
