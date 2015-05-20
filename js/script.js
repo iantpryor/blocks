@@ -11,8 +11,8 @@
         document.getElementById("startbtn").onclick = paintblock(0,0);
         //paint the map
         function paintblock(x,y) {
-            for(var i = 0; i < width; i++) {
-                for(var j = 0; j< height; j++) {
+            for(var i = 0; i < blockSize; i++) {
+                for(var j = 0; j< blockSize; j++) {
                     c.fillStyle = "#000000";
                     c.fillRect(i, j, 1, 1);
                 }
