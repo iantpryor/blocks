@@ -32,7 +32,7 @@
         function paintscreen() {
             for(var i = 0; i< 32; i++) {
                 for(var j = 0; j < 18; j++) {
-                    paintblock(i, j);
+                    paintblock(i*blockSize, j*blockSize);
                 }
             }
         }
