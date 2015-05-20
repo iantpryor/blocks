@@ -28,10 +28,9 @@
                 for(var j = 0; j < 18; j++) {
                     if(i ==0 || i==1 || i == 32-1 || i == 32-2 || j ==0 || j==1 || j == 18-1 || j == 18-2){
                         paintblock(i*blockSize, j*blockSize);
+                    }
                 }
             }
         }
-        
-        
     }
 })(window, document, undefined);
