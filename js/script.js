@@ -8,18 +8,28 @@
         var height = 288;
         var blockSize = 16;
     
-        document.getElementById("startbtn").onclick = paintblock;
-        //paint the map
-        function paintblock() {
+        document.getElementById("startbtn").onclick = paintscreen;
+        
+        //paint the screen
+        function paintscreen() {
+            for(var i = 0; i< 32; i++) {
+                for(var j = 0; j < 18; j++) {
+                    paintblock(i, j);
+                }
+            }
+        }
+        
+        //paint a block
+        function paintblock(x, y) {
             for(var i = 0; i < blockSize; i++) {
                 for(var j = 0; j< blockSize; j++) {
                     if(i == 0 || i == blockSize -1){
                         c.fillStyle = "#000000";
-                        c.fillRect(i, j, 1, 1);
+                        c.fillRect(i*x, j*y, 1, 1);
                     }
                     if(j == 0 || j == blockSize -1){
                         c.fillStyle = "#000000";
-                        c.fillRect(i, j, 1, 1);
+                        c.fillRect(i*x, j*y, 1, 1);
                         
                     }
                     
