@@ -10,15 +10,6 @@
     
         document.getElementById("startbtn").onclick = paintscreen;
         
-        //paint the screen
-        function paintscreen() {
-            for(var i = 0; i< 32; i++) {
-                for(var j = 0; j < 18; j++) {
-                    paintblock(i, j);
-                }
-            }
-        }
-        
         //paint a block
         function paintblock(x, y) {
             for(var i = 0; i < blockSize; i++) {
@@ -36,5 +27,16 @@
                 }
             }
         }
+        
+        //paint the screen
+        function paintscreen() {
+            for(var i = 0; i< 32; i++) {
+                for(var j = 0; j < 18; j++) {
+                    paintblock(i, j);
+                }
+            }
+        }
+        
+        
     }
 })(window, document, undefined);
