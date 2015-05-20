@@ -16,11 +16,11 @@
                 for(var j = 0; j< blockSize; j++) {
                     if(i == 0 || i == blockSize -1){
                         c.fillStyle = "#000000";
-                        c.fillRect(i*x, j*y, 1, 1);
+                        c.fillRect(x+i, y+j, 1, 1);
                     }
                     if(j == 0 || j == blockSize -1){
                         c.fillStyle = "#000000";
-                        c.fillRect(i*x, j*y, 1, 1);
+                        c.fillRect(x+i, y+j, 1, 1);
                         
                     }
                     
