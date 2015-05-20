@@ -13,8 +13,16 @@
         function paintblock() {
             for(var i = 0; i < blockSize; i++) {
                 for(var j = 0; j< blockSize; j++) {
-                    c.fillStyle = "#000000";
-                    c.fillRect(i, j, 1, 1);
+                    if(i == 0 || i == blockSize -1){
+                        c.fillStyle = "#000000";
+                        c.fillRect(i, j, 1, 1);
+                    }
+                    if(j == 0 || j == blockSize -1){
+                        c.fillStyle = "#000000";
+                        c.fillRect(i, j, 1, 1);
+                        
+                    }
+                    
                 }
             }
         }
