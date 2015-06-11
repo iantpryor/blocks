@@ -8,21 +8,10 @@
         var height = 288;
         var blockSize = 16;
     
-        document.getElementById("startbtn").onclick = paintscreen;
-        
-        document.onkeypress = myKeyPress(event);
-        
-        function myKeyPress(e){
-
-            var keynum;
-
-            if(window.event){ // IE					
-            	keynum = e.keyCode;
-            }else
-                if(e.which){ // Netscape/Firefox/Opera					
-            		keynum = e.which;
-                 }
-            alert(String.fromCharCode(keynum));
+       document.onkeypress =  zx;
+        function zx(e){
+        var charCode = (typeof e.which == "number") ? e.which : e.keyCode
+        console.log(charCode);
         }
         
         
