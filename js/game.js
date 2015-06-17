@@ -22,8 +22,8 @@ Game.update = function() {
   }
 };
 
-Game.addRect = function(x) {
-  Game.entities.push(new Rect(x));
+Game.addRect = function(initX) {
+  Game.entities.push(new Rect(initX));
 };
 
 Game.addPlayer = function(){
