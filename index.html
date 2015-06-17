@@ -48,14 +48,29 @@
 
       document.addEventListener('keydown', function(ev) { return onkey(ev, ev.keyCode, true);  }, false);
       document.addEventListener('keyup',   function(ev) { return onkey(ev, ev.keyCode, false); }, false);
+      canvas.addEventListener('mousedown', function(ev) { return onmouse(ev, true); }, false);
+      canvas.addEventListener('mouseup', function(ev) {return onmouse(ev, false); }, false);
     
       function onkey(ev, key, pressed) {
         switch(key) {
-          case KEY.LEFT:  player.input.left  = pressed; ev.preventDefault(); break;
-          case KEY.RIGHT: player.input.right = pressed; ev.preventDefault(); break;
+          case KEY.A:  player.input.left  = pressed; ev.preventDefault(); break;
+          case KEY.D: player.input.right = pressed; ev.preventDefault(); break;
           case KEY.SPACE: player.input.jump  = pressed; ev.preventDefault(); break;
         }
       }
+      function onmouse(ev, pressed){
+        if (!ev.which && ev.button) {
+          if (ev.button & 1) {
+            ev.which = 1;  //Left
+          }else if (ev.button & 4){
+            ev.which = 2; // Middle
+          }else if (ev.button & 2){ 
+            ev.which = 3; // Right
+          }
+        }
+        player.input.jump = pressed;
+      }
+      
 
       // Add some moving rectangles
       var i = 400;
