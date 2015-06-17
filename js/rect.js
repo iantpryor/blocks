@@ -6,10 +6,10 @@ function Rect() {
 };
 
 Rect.prototype.draw = function(context) {
-  context.beginPath();
-  context.rect(this.x, this.y, 30, 30);
-  context.stroke();
-  context.closePath();
+  //context.beginPath();
+  context.strokeRect(this.x, this.y, 30, 30);
+  //context.stroke();
+  //context.closePath();
 };
 
 Rect.prototype.update = function() {
