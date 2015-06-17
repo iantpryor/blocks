@@ -3,6 +3,7 @@ function Rect(initX) {
   this.y = (480 - 30);
   this.velocity = 0;
   this.veleftright = 0;
+  this.tail = this.x + 30;
 };
 
 Rect.prototype.draw = function(context) {
