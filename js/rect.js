@@ -14,6 +14,16 @@ Rect.prototype.update = function() {
   } else if (this.y > 450) {
     this.velocity = -1;
   }
-  
+  if(player.input.left == true){
+    this.veleftright = -1;
+  }else{
+    this.veleftright = 0;
+  }
+  if(player.input.right == true){
+    this.veleftright = 1;
+  }else{
+    this.veleftright = 0;
+  }
   this.y += this.velocity;
+  this.x += this.veleftright;
 };
