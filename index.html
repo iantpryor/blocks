@@ -59,7 +59,7 @@
 
       // Add some moving rectangles
       var i = 400;
-      while (player.input.jump == true) Game.addRect();
+     if(player.input.jump == true) Game.addRect();
       
       Game.run = (function() {
         var loops = 0, skipTicks = 1000 / Game.fps,
