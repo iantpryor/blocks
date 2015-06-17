@@ -13,10 +13,10 @@ Rect.prototype.draw = function(context) {
 };
 
 Rect.prototype.update = function() {
-  if (this.y < 0) {
-    this.velocity = 1;
-  } else if (this.y > 450) {
-    this.velocity = -1;
+  if (this.x < -30) {
+    this.x =450;
+  } else if (this.x > 450) {
+    this.x = -30;
   }
   
   if(player.input.left == true){
