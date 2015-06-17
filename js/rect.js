@@ -18,12 +18,14 @@ Rect.prototype.update = function() {
   
   if(player.input.left == true){
     this.veleftright = 5;
-  }else if(player.input.left == true && player.input.jump == true){
-    this.veleftright = 10;
+    if(player.input.jump == true){
+      this.veleftright += 5;
+    }
   }else if(player.input.right == true){
     this.veleftright = -5;
-  }else if(player.input.right == true && player.input.jump == true){
-    this.veleftright = 10; 
+    if(player.input.jump == true){
+      this.veleftright -= 5;
+    }
   }else{
     this.veleftright = 0;
   }
