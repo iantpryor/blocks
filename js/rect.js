@@ -1,5 +1,5 @@
 function Rect() {
-  this.x = Math.floor(Math.random() * (640 - 30));;
+  this.x = (640 - 30));;
   this.y = (480 - 30);
   this.velocity = Math.random() > 0.5 ? -1 : 1;
   this.veleftright = 0;
