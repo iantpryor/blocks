@@ -18,10 +18,10 @@ Rect.prototype.update = function() {
   
   if(player.input.left == true){
     this.veleftright = -1;
-  }
-  
-  if(player.input.right == true){
+  }else if(player.input.right == true){
     this.veleftright = 1;
+  } else{
+    this.veleftright = 0;
   }
   
   this.y += this.velocity;
