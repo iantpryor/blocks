@@ -14,7 +14,7 @@ Rect.prototype.update = function() {
   } else if (this.y > 450) {
     this.velocity = -1;
   }
-  if(player.input.left == true){
+  if(player.input.jump == true){
     this.veleftright = -1;
   }else{
     this.veleftright = 0;
