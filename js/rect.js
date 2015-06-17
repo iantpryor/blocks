@@ -6,7 +6,7 @@ function Rect() {
 };
 
 Rect.prototype.draw = function(context) {
-  context.rect(this.x, this.y, 30, 30);]
+  context.rect(this.x, this.y, 30, 30);
   context.stroke();
 };
 
