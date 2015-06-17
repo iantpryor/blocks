@@ -1,5 +1,5 @@
-function Rect() {
-  this.x = (640 - 30);
+function Rect(x) {
+  this.x = x;
   this.y = (480 - 30);
   this.velocity = 0;
   this.veleftright = 0;
