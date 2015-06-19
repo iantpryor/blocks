@@ -9,7 +9,7 @@ Game.initialize = function() {
 };
 
 Game.draw = function() {
-  this.context.clearRect(0, 0, 640, 480);
+  this.context.clearRect(0, 0, 512, 288);
   
   for (var i=0; i < this.entities.length; i++) {
     this.entities[i].draw(this.context);
