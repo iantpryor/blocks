@@ -52,7 +52,7 @@ Game.draw = function() {
     
     if(fading == false){
       fading = true;
-      Game.fadeOutRectangle(0, 0, 512, 288, 31, 61, 92);
+      fadeOutRectange(0, 0, 512, 288, 31, 61, 92);
     }
     
     setTimeout(function() {
