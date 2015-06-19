@@ -13,7 +13,7 @@ Game.initialize = function() {
 Game.draw = function() {
   this.context.clearRect(0, 0, 512, 288);
   
-  this.context.fillStyle = "#0099CC";
+  this.context.fillStyle = "#1F3D5C";
   this.context.fillRect(0, 0, 512, 288);
   
   if(timersetflash == false){ //flash timer
