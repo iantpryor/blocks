@@ -15,22 +15,22 @@ Game.initialize = function() {
 
 function fadeOutRectangle(x, y, w, h, r, g, b) {
   var self = this;
-    var steps = 50,
-        dr = (255 - r) / steps, // how much red should be added each time
-        dg = (255 - g) / steps, // green
-        db = (255 - b) / steps, // blue
-        var count = 0, // step counter
-        interval = setInterval(function() {
-            self.context.fillStyle = 'rgb(' + Math.round(r + dr * count) + ','
-                                   + Math.round(g + dg * count) + ','
-                                   + Math.round(b + db * count) + ')';
-            self.context.fillRect(x, y, w, h); // will redraw the area each time
-            count++;
-            if(count === steps) { // stop if done
-                clearInterval(interval);
-                fading = false;
-            }
-        }, 30);
+  var steps = 50,
+    dr = (255 - r) / steps, // how much red should be added each time
+    dg = (255 - g) / steps, // green
+    db = (255 - b) / steps, // blue
+    count = 0, // step counter
+    interval = setInterval(function() {
+        self.context.fillStyle = 'rgb(' + Math.round(r + dr * count) + ','
+                               + Math.round(g + dg * count) + ','
+                               + Math.round(b + db * count) + ')';
+        self.context.fillRect(x, y, w, h); // will redraw the area each time
+        count++;
+        if(count === steps) { // stop if done
+            clearInterval(interval);
+            fading = false;
+        }
+    }, 30);
 }
 
 Game.draw = function() {
