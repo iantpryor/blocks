@@ -3,6 +3,7 @@ var light = false;
 var timerset = false;
 var timersetflash = false;
 var fading = false;
+var currContext = #1F3D5C";
 Game.fps = 50;
 
 
@@ -18,10 +19,8 @@ Game.draw = function() {
 
   this.context.clearRect(0, 0, 512, 288);
   
-  if(light == false && fading == false){//if we're not lit up and not fading, put regular background
-    this.context.fillStyle = "#1F3D5C";
-    this.context.fillRect(0, 0, 512, 288);
-  }
+  this.context.fillStyle = currContext;
+  this.context.fillRect(0, 0, 512, 288);
   
   
   if(light == true && fading == false){ 
@@ -36,14 +35,15 @@ Game.draw = function() {
     var db = (92 - b) / steps; // blue
     var count = 0; // step counter
     var interval = setInterval(function() {
-        self.fillStyle = 'rgb(' + Math.round(r + dr * count) + ',' + Math.round(g + dg * count) + ',' + Math.round(b + db * count) + ')';
-        self.fillRect(0, 0, 512, 288); // will redraw the area each time
-        count++;
-        if(count === steps) { // stop if done
-            clearInterval(interval);
-            fading = false;
-            light = false;
-        }
+      currContext = 'rgb(' + Math.round(r + dr * count) + ',' + Math.round(g + dg * count) + ',' + Math.round(b + db * count) + ')';
+      self.fillStyle = currContext;
+      self.fillRect(0, 0, 512, 288); // will redraw the area each time
+      count++;
+      if(count === steps) { // stop if done
+          clearInterval(interval);
+          fading = false;
+          light = false;
+      }
     }, 30);
   }
   
