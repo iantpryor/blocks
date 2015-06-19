@@ -73,15 +73,6 @@
         player.input.jump = pressed;
       }
       
-
-      // Add some moving rectangle
-      for(i =0; i< 17; i++){
-        Game.addRect(i*32);
-      }
-      
-      for(i =0; i< 800; i++){
-        Game.addRain();
-      }
       
       Game.run = (function() {
         var loops = 0, skipTicks = 1000 / Game.fps,
