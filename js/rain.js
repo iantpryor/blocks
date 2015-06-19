@@ -1,7 +1,7 @@
 function Rain() {
   this.x = Math.floor(Math.random() * (512 - 0 + 1)) + 0;;
   this.y = (480 - 30);
-  this.velocity = 5;
+  this.velocity = 2;
   this.veleftright = 0;
   this.tail = this.x + 30;
 };
