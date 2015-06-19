@@ -3,7 +3,7 @@ var light = false;
 var timerset = false;
 var timersetflash = false;
 var fading = false;
-var currContext = #1F3D5C";
+var currContext = "#1F3D5C";
 Game.fps = 50;
 
 
