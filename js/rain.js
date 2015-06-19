@@ -1,10 +1,9 @@
 function Rain() {
-  this.x = var num = Math.floor(Math.random()*1024); // this will get a number between 0 and 1023;
+  this.x = Math.floor(Math.random()*1024); // this will get a number between 0 and 1023;
   this.x - 256;  //this will put it in the range we want
   this.y = Math.floor(Math.random() * (288 - 0  + 1)) + 0;
   this.velocity = 5;
   this.veleftright = 0;
-  this.tail = this.x + 30;
 };
 
 Rain.prototype.draw = function(context) {
@@ -19,7 +18,7 @@ Rain.prototype.draw = function(context) {
 Rain.prototype.update = function() {
   if (this.y > 288) {
     this.y = - 5;
-    this.x = var num = Math.floor(Math.random()*1024); // this will get a number between 0 and 1023;
+    this.x = Math.floor(Math.random()*1024); // this will get a number between 0 and 1023;
     this.x - 256;  //this will put it in the range we want
   }
   if(player.input.left == true){
