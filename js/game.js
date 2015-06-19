@@ -12,6 +12,14 @@ Game.initialize = function() {
   this.entities = [];
   this.context = document.getElementById("viewport").getContext("2d");
   
+  for(i =0; i< 17; i++){
+    Game.addRect(i*32);
+  }
+      
+  for(i =0; i< 800; i++){
+    Game.addRain();
+  }
+  
 };
 
 
