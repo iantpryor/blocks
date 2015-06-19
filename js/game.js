@@ -24,11 +24,10 @@ Game.draw = function() {
   
   
   if(light == true && fading == false){ 
-    this.context.fillStyle = "#FFFFFF";
-    this.context.fillRect(0, 0, 512, 288);
+    //this.context.fillStyle = "#FFFFFF";
+    //this.context.fillRect(0, 0, 512, 288);
     fading = true;
     var r = 255, g = 255, b = 255; // starting color
-    var self = document.getElementById("viewport").getContext("2d");
     var steps = 50;
     var dr = (31 - r) / steps; // how much red should be added each time
     var dg = (61 - g) / steps; // green
@@ -36,8 +35,8 @@ Game.draw = function() {
     var count = 0; // step counter
     var interval = setInterval(function() {
       currContext = 'rgb(' + Math.round(r + dr * count) + ',' + Math.round(g + dg * count) + ',' + Math.round(b + db * count) + ')';
-      self.fillStyle = currContext;
-      self.fillRect(0, 0, 512, 288); // will redraw the area each time
+      //self.fillStyle = currContext;
+      //self.fillRect(0, 0, 512, 288); // will redraw the area each time
       count++;
       if(count === steps) { // stop if done
           clearInterval(interval);
