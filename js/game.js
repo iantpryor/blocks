@@ -13,16 +13,15 @@ Game.initialize = function() {
   
 };
 
-Game.fadeOutRectange = function(x, y, w, h, r, g, b) {
-    
-  };
-
 
 Game.draw = function() {
 
   this.context.clearRect(0, 0, 512, 288);
-  this.context.fillStyle = "#1F3D5C";
-  this.context.fillRect(0, 0, 512, 288);
+  
+  if(light == false && fading == false){//if we're not lit up and not fading, put regular background
+    this.context.fillStyle = "#1F3D5C";
+    this.context.fillRect(0, 0, 512, 288);
+  }
   
   
   if(light == true && fading == false){ 
