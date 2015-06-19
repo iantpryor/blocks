@@ -19,14 +19,14 @@ function fadeOutRectangle(x, y, w, h, r, g, b) {
         dr = (255 - r) / steps, // how much red should be added each time
         dg = (255 - g) / steps, // green
         db = (255 - b) / steps, // blue
-        i = 0, // step counter
+        var count = 0, // step counter
         interval = setInterval(function() {
-            self.context.fillStyle = 'rgb(' + Math.round(r + dr * i) + ','
-                                   + Math.round(g + dg * i) + ','
-                                   + Math.round(b + db * i) + ')';
+            self.context.fillStyle = 'rgb(' + Math.round(r + dr * count) + ','
+                                   + Math.round(g + dg * count) + ','
+                                   + Math.round(b + db * count) + ')';
             self.context.fillRect(x, y, w, h); // will redraw the area each time
-            i++;
-            if(i >= steps) { // stop if done
+            count++;
+            if(count === steps) { // stop if done
                 clearInterval(interval);
                 fading = false;
             }
