@@ -14,12 +14,12 @@ Rect.prototype.draw = function(context) {
 };
 
 Rect.prototype.update = function() {
-  if (this.x < -32) {
+  /*if (this.x < -32) {
     this.x = Game.entites[16].tail;
     
   } else if (this.x > 512) {
     this.x = -32;
-  }
+  }*/
   
   if(player.input.left == true){
     this.veleftright = 5;
