@@ -1,6 +1,6 @@
 function Rect(initX) {
   this.x = initX;
-  this.y = (480 - 30);
+  this.y = 288 - 30;
   this.velocity = 0;
   this.veleftright = 0;
   this.tail = this.x + 30;
@@ -15,8 +15,8 @@ Rect.prototype.draw = function(context) {
 
 Rect.prototype.update = function() {
   if (this.x < -30) {
-    this.x =450;
-  } else if (this.x > 450) {
+    this.x =512;
+  } else if (this.x > 512) {
     this.x = -30;
   }
   
