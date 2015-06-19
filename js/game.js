@@ -27,7 +27,7 @@ Game.draw = function() {
   if(timerset == false){ //if we haven't set a timer yet, set one
     setTimeout(function(){
       light = true;
-    }, 10000);
+    }, 3000);
     timerset = true;
   }
   
