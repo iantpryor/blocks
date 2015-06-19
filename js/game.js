@@ -24,55 +24,32 @@ Game.draw = function() {
   this.context.fillStyle = "#1F3D5C";
   this.context.fillRect(0, 0, 512, 288);
   
-  /*if(timersetflash == false){ //flash timer
-    setTimeout(function(){
-      light = false;
-      timersetflash = false;
-    }, 200);
-    timersetflash = true;
-  }*/
-  
   if(light == true && fading == false){ 
     this.context.fillStyle = "#FFFFFF";
     this.context.fillRect(0, 0, 512, 288);
-    
-    if(fading == false){
-      fading = true;
-      //fadeOutRectange(0, 0, 512, 288, 31, 61, 92);
-      var r = 255, g = 255, b = 255;
-      var self = document.getElementById("viewport").getContext("2d");
-      var steps = 50;
-      var dr = (31 - r) / steps; // how much red should be added each time
-      var dg = (61 - g) / steps; // green
-      var db = (92 - b) / steps; // blue
-      var count = 0; // step counter
-      var interval = setInterval(function() {
-          self.fillStyle = 'rgb(' + Math.round(r + dr * count) + ',' + Math.round(g + dg * count) + ',' + Math.round(b + db * count) + ')';
-          self.fillRect(0, 0, 512, 288); // will redraw the area each time
-          count++;
-          if(count === steps) { // stop if done
-              clearInterval(interval);
-              fading = false;
-              light = false;
-          }
-      }, 30);
-    }
-    
-    /*setTimeout(function() {
-      light = false;
-      timerset = false;
-      flash = 0;
-    }, 3000);*/
+    fading = true;
+    var r = 255, g = 255, b = 255; // starting color
+    var self = document.getElementById("viewport").getContext("2d");
+    var steps = 50;
+    var dr = (31 - r) / steps; // how much red should be added each time
+    var dg = (61 - g) / steps; // green
+    var db = (92 - b) / steps; // blue
+    var count = 0; // step counter
+    var interval = setInterval(function() {
+        self.fillStyle = 'rgb(' + Math.round(r + dr * count) + ',' + Math.round(g + dg * count) + ',' + Math.round(b + db * count) + ')';
+        self.fillRect(0, 0, 512, 288); // will redraw the area each time
+        count++;
+        if(count === steps) { // stop if done
+            clearInterval(interval);
+            fading = false;
+            light = false;
+        }
+    }, 30);
   }
   
-  
-  if(timerset == false){ //if we haven't set a timer yet, set one
-    setTimeout(function(){
-      light = true;
-    }, 5000);
-    timerset = true;
-  }
-  
+  setTimer(function(){
+    light = true;
+  }, 5000);
   
   for (var i=0; i < this.entities.length; i++) {
     this.entities[i].draw(this.context);
