@@ -12,6 +12,24 @@ Game.initialize = function() {
   
 };
 
+function fadeOutRectangle(x, y, w, h, r, g, b) {
+  var self = this;
+    var steps = 50,
+        dr = (255 - r) / steps, // how much red should be added each time
+        dg = (255 - g) / steps, // green
+        db = (255 - b) / steps, // blue
+        i = 0, // step counter
+        interval = setInterval(function() {
+            self.context.fillStyle = 'rgb(' + Math.round(r + dr * i) + ','
+                                   + Math.round(g + dg * i) + ','
+                                   + Math.round(b + db * i) + ')';
+            self.context.fillRect(x, y, w, h); // will redraw the area each time
+            i++;
+            if(i === steps) { // stop if done
+                clearInterval(interval);
+            }
+        }, 30);
+}
 
 Game.draw = function() {
     
@@ -32,26 +50,7 @@ Game.draw = function() {
     this.context.fillStyle = "#FFFFFF";
     this.context.fillRect(0, 0, 512, 288);
     
-    var self = this;
-    var r = 255;
-    var g = 255;
-    var b = 255;
-    
-    var steps = 50,
-    dr = (31 - r) / steps, // how much red should be added each time
-    dg = (61 - g) / steps, // green
-    db = (92 - b) / steps, // blue
-    i = 0, // step counter
-    interval = setInterval(function() {
-      self.context.fillStyle = 'rgb(' + Math.round(r + dr * i) + ','
-                               + Math.round(g + dg * i) + ','
-                               + Math.round(b + db * i) + ')';
-      self.context.fillRect(0, 0, 512, 288); // will redraw the area each time
-      i++;
-      if(i === steps) { // stop if done
-        clearInterval(interval);
-      }
-    }, 30);
+    fadeOutRectangle(0, 0, 512, 288, 31, 61, 92);
     
     setTimeout(function() {
       light = false;
