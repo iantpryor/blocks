@@ -44,7 +44,7 @@ Game.draw = function() {
     }, 30);
   }
   
-  var lightTime = Math.floor(Math.random() * (7000 - 3000 + 1)) + 3000; // random amount of time between 3 and 7 seconds
+  var lightTime = Math.floor(Math.random() * (7000 - 1000 + 1)) + 1000; // random amount of time between 3 and 7 seconds
   if(light == false && timerset == false){ //if the light is off, set a timer to light it after 5 sec
     setTimeout(function(){
       light = true;
