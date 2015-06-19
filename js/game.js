@@ -1,5 +1,6 @@
 var Game = {};
 var light = false;
+var timerset = false;
 Game.fps = 50;
 
 Game.initialize = function() {
@@ -14,16 +15,21 @@ Game.draw = function() {
   this.context.fillStyle = "#0099CC";
   this.context.fillRect(0, 0, 512, 288);
   
-  if(light == true){
+  if(light == true){ 
     this.context.fillStyle = "#FFFFFF";
     this.context.fillRect(0, 0, 512, 288);
     setTimeout(function() {
       light = false;
     }, 500);
   }
-  setTimeout(function(){
-    light = true;
-  }, 10000);
+  
+  if(timerset == false){ //if we haven't set a timer yet, set one
+    setTimeout(function(){
+      light = true;
+    }, 10000);
+    timerset = true;
+  }
+  
   
   for (var i=0; i < this.entities.length; i++) {
     this.entities[i].draw(this.context);
