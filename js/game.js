@@ -14,21 +14,7 @@ Game.initialize = function() {
 };
 
 Game.fadeOutRectange = function(x, y, w, h, r, g, b) {
-    var self = document.getElementById("viewport").getContext("2d");
-    var steps = 50;
-    var dr = (255 - r) / steps; // how much red should be added each time
-    var dg = (255 - g) / steps; // green
-    var db = (255 - b) / steps; // blue
-    var count = 0; // step counter
-    var interval = setInterval(function() {
-        self.fillStyle = 'rgb(' + Math.round(r + dr * count) + ',' + Math.round(g + dg * count) + ',' + Math.round(b + db * count) + ')';
-        self.fillRect(x, y, w, h); // will redraw the area each time
-        count++;
-        if(count === steps) { // stop if done
-            clearInterval(interval);
-            fading = false;
-        }
-    }, 30);
+    
   };
 
 
@@ -52,7 +38,23 @@ Game.draw = function() {
     
     if(fading == false){
       fading = true;
-      fadeOutRectange(0, 0, 512, 288, 31, 61, 92);
+      //fadeOutRectange(0, 0, 512, 288, 31, 61, 92);
+      var r = 31, g = 61, b = 92;
+      var self = document.getElementById("viewport").getContext("2d");
+      var steps = 50;
+      var dr = (255 - r) / steps; // how much red should be added each time
+      var dg = (255 - g) / steps; // green
+      var db = (255 - b) / steps; // blue
+      var count = 0; // step counter
+      var interval = setInterval(function() {
+          self.fillStyle = 'rgb(' + Math.round(r + dr * count) + ',' + Math.round(g + dg * count) + ',' + Math.round(b + db * count) + ')';
+          self.fillRect(0, 0, 512, 288); // will redraw the area each time
+          count++;
+          if(count === steps) { // stop if done
+              clearInterval(interval);
+              fading = false;
+          }
+      }, 30);
     }
     
     setTimeout(function() {
