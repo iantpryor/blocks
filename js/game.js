@@ -47,7 +47,7 @@ Game.draw = function() {
     }, 30);
   }
   
-  setTimer(function(){
+  setTimeout(function(){
     light = true;
   }, 5000);
   
