@@ -25,6 +25,9 @@ Game.update = function() {
 Game.addRect = function(initX) {
   Game.entities.push(new Rect(initX));
 };
+Game.addRain = function() {
+  Game.entities.push(new Rain());
+};
 
 Game.addPlayer = function(){
   Game.entites.push(new Player());
