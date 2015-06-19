@@ -13,7 +13,11 @@ Game.initialize = function() {
   
 };
 
-function fadeOutRectange(x, y, w, h, r, g, b) {
+
+
+Game.draw = function() {
+  
+  function fadeOutRectange(x, y, w, h, r, g, b) {
   var self = document.getElementById("viewport").getContext("2d");
   var steps = 50;
   var dr = (255 - r) / steps; // how much red should be added each time
@@ -31,9 +35,7 @@ function fadeOutRectange(x, y, w, h, r, g, b) {
             fading = false;
         }
     }, 30);
-}
-
-Game.draw = function() {
+  }
     
   this.context.clearRect(0, 0, 512, 288);
   
