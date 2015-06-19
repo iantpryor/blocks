@@ -13,25 +13,25 @@ Game.initialize = function() {
   
 };
 
-Game.fadeOutRectange = function(x, y, w, h, r, g, b) {
-  var self = this;
+function fadeOutRectange(x, y, w, h, r, g, b) {
+  var self = document.getElementById("viewport").getContext("2d");;
   var steps = 50,
     dr = (255 - r) / steps, // how much red should be added each time
     dg = (255 - g) / steps, // green
     db = (255 - b) / steps, // blue
     count = 0, // step counter
     interval = setInterval(function() {
-        self.context.fillStyle = 'rgb(' + Math.round(r + dr * count) + ','
+        self.fillStyle = 'rgb(' + Math.round(r + dr * count) + ','
                                + Math.round(g + dg * count) + ','
                                + Math.round(b + db * count) + ')';
-        self.context.fillRect(x, y, w, h); // will redraw the area each time
+        self.fillRect(x, y, w, h); // will redraw the area each time
         count++;
         if(count === steps) { // stop if done
             clearInterval(interval);
             fading = false;
         }
     }, 30);
-};
+}
 
 Game.draw = function() {
     
@@ -54,7 +54,7 @@ Game.draw = function() {
     
     if(fading == false){
       fading = true;
-      Game.fadeOutRectangle(0, 0, 512, 288, 31, 61, 92);
+      fadeOutRectangle(0, 0, 512, 288, 31, 61, 92);
     }
     
     setTimeout(function() {
