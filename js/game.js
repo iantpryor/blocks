@@ -23,6 +23,7 @@ Game.draw = function() {
     setTimeout(function() {
       light = false;
       timerset = false;
+      flash = 0;
     }, 250);
   }
   
