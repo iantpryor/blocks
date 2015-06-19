@@ -12,9 +12,6 @@ Game.initialize = function() {
   
 };
 
-function fadeOutRectangle(x, y, w, h, r, g, b) {
-  
-}
 
 Game.draw = function() {
     
@@ -41,9 +38,9 @@ Game.draw = function() {
     var b = 255;
     
     var steps = 50,
-    var dr = (31 - r) / steps, // how much red should be added each time
-    var dg = (61 - g) / steps, // green
-    var db = (92 - b) / steps, // blue
+    dr = (31 - r) / steps, // how much red should be added each time
+    dg = (61 - g) / steps, // green
+    db = (92 - b) / steps, // blue
     i = 0, // step counter
     interval = setInterval(function() {
       self.context.fillStyle = 'rgb(' + Math.round(r + dr * i) + ','
