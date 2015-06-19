@@ -2,6 +2,7 @@ var Game = {};
 var light = false;
 var timerset = false;
 var timersetflash = false;
+var fading = false;
 Game.fps = 50;
 
 
@@ -27,6 +28,7 @@ function fadeOutRectangle(x, y, w, h, r, g, b) {
             i++;
             if(i === steps) { // stop if done
                 clearInterval(interval);
+                fading = false;
             }
         }, 30);
 }
@@ -50,7 +52,10 @@ Game.draw = function() {
     this.context.fillStyle = "#FFFFFF";
     this.context.fillRect(0, 0, 512, 288);
     
-    fadeOutRectangle(0, 0, 512, 288, 31, 61, 92);
+    if(fading == false){
+      fading = true;
+      fadeOutRectangle(0, 0, 512, 288, 31, 61, 92);
+    }
     
     setTimeout(function() {
       light = false;
