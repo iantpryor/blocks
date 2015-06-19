@@ -15,15 +15,15 @@ Game.draw = function() {
   this.context.fillRect(0, 0, 512, 288);
   
   if(light == true){
-    this.context.fillStyle = "#000000";
+    this.context.fillStyle = "#FFFFFF";
     this.context.fillRect(0, 0, 512, 288);
-    light = false;
+    setTimeout(function() {
+      light = false;
+    }, 500);
   }
-  
-  setTimeout(function() {
+  setTimeout(function(){
     light = true;
-  }, 5000);
-  
+  }, 10000);
   
   for (var i=0; i < this.entities.length; i++) {
     this.entities[i].draw(this.context);
