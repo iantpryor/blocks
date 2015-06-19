@@ -49,7 +49,7 @@ Game.draw = function() {
     this.context.fillStyle = "#FFFFFF";
     this.context.fillRect(0, 0, 512, 288);
     
-    fadeOutRectangle(0,0,512,288,255,255,255)
+    fadeOutRectangle(0,0,512,288,255,255,255);
     
     setTimeout(function() {
       light = false;
