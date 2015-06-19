@@ -20,7 +20,8 @@ Game.draw = function() {
     this.context.fillRect(0, 0, 512, 288);
     setTimeout(function() {
       light = false;
-    }, 500);
+      timerset = false;
+    }, 250);
   }
   
   if(timerset == false){ //if we haven't set a timer yet, set one
