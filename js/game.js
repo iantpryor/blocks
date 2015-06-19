@@ -11,10 +11,10 @@ function fadeOutRectangle(x, y, w, h, r, g, b) {
         db = (92 - b) / steps, // blue
         i = 0, // step counter
         interval = setInterval(function() {
-            ctx.fillStyle = 'rgb(' + Math.round(r + dr * i) + ','
+            this.context.fillStyle = 'rgb(' + Math.round(r + dr * i) + ','
                                    + Math.round(g + dg * i) + ','
                                    + Math.round(b + db * i) + ')';
-            ctx.fillRect(x, y, w, h); // will redraw the area each time
+            this.context.fillRect(x, y, w, h); // will redraw the area each time
             i++;
             if(i === steps) { // stop if done
                 clearInterval(interval);
