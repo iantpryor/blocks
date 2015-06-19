@@ -20,6 +20,10 @@ Game.draw = function() {
     light = false;
   }
   
+  setTimeout(function() {
+    light = true;
+  }, 5000);
+  
   
   for (var i=0; i < this.entities.length; i++) {
     this.entities[i].draw(this.context);
