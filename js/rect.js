@@ -16,7 +16,7 @@ Rect.prototype.draw = function(context) {
 Rect.prototype.update = function() {
   if (this.x < -32) {
     this.x =512;
-    //floor[currPlace - 17].tail
+    Game.entites[16].tail;
   } else if (this.x > 512) {
     this.x = -32;
   }
