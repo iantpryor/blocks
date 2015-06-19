@@ -40,13 +40,13 @@ Game.draw = function() {
   this.context.fillStyle = "#1F3D5C";
   this.context.fillRect(0, 0, 512, 288);
   
-  if(timersetflash == false){ //flash timer
+  /*if(timersetflash == false){ //flash timer
     setTimeout(function(){
       light = false;
       timersetflash = false;
     }, 200);
     timersetflash = true;
-  }
+  }*/
   
   if(light == true ){ 
     this.context.fillStyle = "#FFFFFF";
