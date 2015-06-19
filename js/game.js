@@ -26,7 +26,7 @@ function fadeOutRectangle(x, y, w, h, r, g, b) {
                                    + Math.round(b + db * i) + ')';
             self.context.fillRect(x, y, w, h); // will redraw the area each time
             i++;
-            if(i === steps) { // stop if done
+            if(i >= steps) { // stop if done
                 clearInterval(interval);
                 fading = false;
             }
