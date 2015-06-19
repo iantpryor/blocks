@@ -70,6 +70,22 @@ Game.update = function() {
   for (var i=0; i < this.entities.length; i++) {
     this.entities[i].update();
   }
+  //update blocks in a repeating pattern
+  for(var i = 0; i< 17; i++){
+    if (this.entities[i].x < -32) {
+      if(i == 0){
+        this.entities[i].x = this.entities[16].tail;
+      }else{
+        this.entities[i].x = this.entities[i-1].tail;
+      }
+    } else if (this.x > 512) {
+      if(i == 16){
+        this.entities[i].x = this.entities[0].tail - 64;
+      }else{
+        this.entities[i].x = this.entities[i+1].tail - 64;
+      }
+    }
+  }
 };
 
 Game.addRect = function(initX) {
