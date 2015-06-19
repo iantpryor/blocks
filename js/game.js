@@ -14,6 +14,11 @@ Game.draw = function() {
   this.context.fillStyle = "#0099CC";
   this.context.fillRect(0, 0, 512, 288);
   
+  setTimeout(function() {
+    this.context.fillStyle = "#000000";
+    this.context.fillRect(0, 0, 512, 288);
+  }, 5000);
+  
   for (var i=0; i < this.entities.length; i++) {
     this.entities[i].draw(this.context);
   }
