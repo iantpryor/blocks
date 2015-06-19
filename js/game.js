@@ -48,10 +48,12 @@ Game.draw = function() {
     }, 30);
   }
   
-  if(light == false){ //if the light is off, set a timer to light it after 5 sec
+  if(light == false && timerset == false){ //if the light is off, set a timer to light it after 5 sec
     setTimeout(function(){
       light = true;
+      timerset = false;
     }, 5000);
+    timerset = true;
   }
   
   for (var i=0; i < this.entities.length; i++) {
