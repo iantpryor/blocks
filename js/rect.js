@@ -1,23 +1,23 @@
 function Rect(initX) {
   this.x = initX;
-  this.y = 288 - 30;
+  this.y = 288 - 32;
   this.velocity = 0;
   this.veleftright = 0;
-  this.tail = this.x + 30;
+  this.tail = this.x + 32;
 };
 
 Rect.prototype.draw = function(context) {
   //context.beginPath();
-  context.strokeRect(this.x, this.y, 30, 30);
+  context.strokeRect(this.x, this.y, 32, 32);
   //context.stroke();
   //context.closePath();
 };
 
 Rect.prototype.update = function() {
-  if (this.x < -30) {
+  if (this.x < -32) {
     this.x =512;
   } else if (this.x > 512) {
-    this.x = -30;
+    this.x = -32;
   }
   
   if(player.input.left == true){
