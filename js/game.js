@@ -1,5 +1,5 @@
 var Game = {};
-
+var light = false;
 Game.fps = 50;
 
 Game.initialize = function() {
@@ -13,6 +13,12 @@ Game.draw = function() {
   
   this.context.fillStyle = "#0099CC";
   this.context.fillRect(0, 0, 512, 288);
+  
+  if(light == true){
+    this.context.fillStyle = "#000000";
+    this.context.fillRect(0, 0, 512, 288);
+    light = false;
+  }
   
   
   for (var i=0; i < this.entities.length; i++) {
