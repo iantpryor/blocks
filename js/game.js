@@ -4,7 +4,16 @@ var timerset = false;
 var timersetflash = false;
 Game.fps = 50;
 
-function fadeOutRectangle(x, y, w, h, r, g, b) {
+
+
+Game.initialize = function() {
+  this.entities = [];
+  this.context = document.getElementById("viewport").getContext("2d");
+  
+};
+
+Game.draw = function() {
+    function fadeOutRectangle(x, y, w, h, r, g, b) {
     var steps = 50,
         dr = (31 - r) / steps, // how much red should be added each time
         dg = (61 - g) / steps, // green
@@ -20,15 +29,7 @@ function fadeOutRectangle(x, y, w, h, r, g, b) {
                 clearInterval(interval);
             }
         }, 30);
-}
-
-Game.initialize = function() {
-  this.entities = [];
-  this.context = document.getElementById("viewport").getContext("2d");
-  
-};
-
-Game.draw = function() {
+    }
   this.context.clearRect(0, 0, 512, 288);
   
   this.context.fillStyle = "#1F3D5C";
