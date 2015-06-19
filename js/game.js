@@ -46,7 +46,7 @@ Game.draw = function() {
       self.context.fillStyle = 'rgb(' + Math.round(r + dr * i) + ','
                                + Math.round(g + dg * i) + ','
                                + Math.round(b + db * i) + ')';
-      self.context.fillRect(x, y, w, h); // will redraw the area each time
+      self.context.fillRect(0, 0, 512, 288); // will redraw the area each time
       i++;
       if(i === steps) { // stop if done
         clearInterval(interval);
