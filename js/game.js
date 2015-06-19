@@ -11,8 +11,8 @@ Game.initialize = function() {
 Game.draw = function() {
   this.context.clearRect(0, 0, 512, 288);
   
-  context.fillStyle = "#0099CC";
-  context.fillRect(0, 0, 512, 288);
+  this.context.fillStyle = "#0099CC";
+  this.context.fillRect(0, 0, 512, 288);
   
   for (var i=0; i < this.entities.length; i++) {
     this.entities[i].draw(this.context);
