@@ -12,24 +12,26 @@ Game.initialize = function() {
   
 };
 
-Game.draw = function() {
-    function fadeOutRectangle(x, y, w, h, r, g, b) {
-    var steps = 50,
-        dr = (31 - r) / steps, // how much red should be added each time
-        dg = (61 - g) / steps, // green
-        db = (92 - b) / steps, // blue
-        i = 0, // step counter
-        interval = setInterval(function() {
-            this.context.fillStyle = 'rgb(' + Math.round(r + dr * i) + ','
-                                   + Math.round(g + dg * i) + ','
-                                   + Math.round(b + db * i) + ')';
-            this.context.fillRect(x, y, w, h); // will redraw the area each time
-            i++;
-            if(i === steps) { // stop if done
-                clearInterval(interval);
-            }
-        }, 30);
+function fadeOutRectangle(x, y, w, h, r, g, b) {
+  var steps = 50,
+  dr = (31 - r) / steps, // how much red should be added each time
+  dg = (61 - g) / steps, // green
+  db = (92 - b) / steps, // blue
+  i = 0, // step counter
+  interval = setInterval(function() {
+    this.context.fillStyle = 'rgb(' + Math.round(r + dr * i) + ','
+                             + Math.round(g + dg * i) + ','
+                             + Math.round(b + db * i) + ')';
+    this.context.fillRect(x, y, w, h); // will redraw the area each time
+    i++;
+    if(i === steps) { // stop if done
+      clearInterval(interval);
     }
+  }, 30);
+}
+
+Game.draw = function() {
+    
   this.context.clearRect(0, 0, 512, 288);
   
   this.context.fillStyle = "#1F3D5C";
