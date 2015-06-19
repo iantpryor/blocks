@@ -1,5 +1,5 @@
 function Rain() {
-  this.x = Math.floor(Math.random() * (512 - 0 + 1)) + 0;
+  this.x = Math.floor(Math.random() * (512+30 - 0 -30 + 1)) + -30;
   this.y = (480 - 30);
   this.velocity = Math.floor(Math.random() * (5 - 1 + 1)) + 1;;
   this.veleftright = 0;
@@ -18,7 +18,7 @@ Rain.prototype.draw = function(context) {
 Rain.prototype.update = function() {
   if (this.y > 288) {
     this.y = - 5;
-    this.x = Math.floor(Math.random() * (512 - 0 + 1)) + 0;
+    this.x = Math.floor(Math.random() * (512+30 - 0 -30 + 1)) + -30;
     this.velocity = Math.floor(Math.random() * (5 - 1 + 1)) + 1;;
   }
   if(player.input.left == true){
