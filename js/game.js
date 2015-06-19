@@ -13,11 +13,7 @@ Game.initialize = function() {
   
 };
 
-
-
-Game.draw = function() {
-  
-  function fadeOutRectange(x, y, w, h, r, g, b) {
+Game.fadeOutRectange = function(x, y, w, h, r, g, b) {
     var self = document.getElementById("viewport").getContext("2d");
     var steps = 50;
     var dr = (255 - r) / steps; // how much red should be added each time
@@ -33,8 +29,11 @@ Game.draw = function() {
             fading = false;
         }
     }, 30);
-  }
-    
+  };
+
+
+Game.draw = function() {
+
   this.context.clearRect(0, 0, 512, 288);
   this.context.fillStyle = "#1F3D5C";
   this.context.fillRect(0, 0, 512, 288);
@@ -53,7 +52,7 @@ Game.draw = function() {
     
     if(fading == false){
       fading = true;
-      fadeOutRectangle(0, 0, 512, 288, 31, 61, 92);
+      Game.fadeOutRectangle(0, 0, 512, 288, 31, 61, 92);
     }
     
     setTimeout(function() {
