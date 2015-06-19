@@ -8,7 +8,7 @@ function Rain() {
 
 Rain.prototype.draw = function(context) {
   //context.beginPath();
-  context.fillStyle = "#F00";
+  context.fillStyle = "#003399";
   context.fillRect(this.x, this.y, 1, 10);
   //context.strokeRect(this.x, this.y, 30, 30);
   //context.stroke();
