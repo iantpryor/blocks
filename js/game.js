@@ -23,25 +23,23 @@ Game.draw = function() {
   this.context.fillRect(0, 0, 512, 288);
   
   
-  if(light == true && fading == false){ 
-    //this.context.fillStyle = "#FFFFFF";
-    //this.context.fillRect(0, 0, 512, 288);
-    fading = true;
-    var r = 255, g = 255, b = 255; // starting color
+  if(light == true && fading == false){
+    fading = true; // we're starting to fade, so don't run this function more than once
+    var r = 255, g = 255, b = 255; // starting color (white)
     var steps = 50;
     var dr = (31 - r) / steps; // how much red should be added each time
     var dg = (61 - g) / steps; // green
     var db = (92 - b) / steps; // blue
     var count = 0; // step counter
     var interval = setInterval(function() {
-      currContext = 'rgb(' + Math.round(r + dr * count) + ',' + Math.round(g + dg * count) + ',' + Math.round(b + db * count) + ')';
-      //self.fillStyle = currContext;
-      //self.fillRect(0, 0, 512, 288); // will redraw the area each time
+      currContext = 'rgb(' + Math.round(r + dr * count) + ',' 
+                  + Math.round(g + dg * count) + ',' 
+                  + Math.round(b + db * count) + ')';
       count++;
       if(count === steps) { // stop if done
           clearInterval(interval);
-          fading = false;
-          light = false;
+          fading = false; // we're done fading
+          light = false; // light is now off
       }
     }, 30);
   }
