@@ -24,6 +24,7 @@ Game.draw = function() {
   this.context.fillStyle = "#1F3D5C";
   this.context.fillRect(0, 0, 512, 288);
   
+  
   if(light == true && fading == false){ 
     this.context.fillStyle = "#FFFFFF";
     this.context.fillRect(0, 0, 512, 288);
@@ -47,9 +48,11 @@ Game.draw = function() {
     }, 30);
   }
   
-  setTimeout(function(){
-    light = true;
-  }, 5000);
+  if(light == false){ //if the light is off, set a timer to light it after 5 sec
+    setTimeout(function(){
+      light = true;
+    }, 5000);
+  }
   
   for (var i=0; i < this.entities.length; i++) {
     this.entities[i].draw(this.context);
