@@ -39,12 +39,12 @@ Game.draw = function() {
     if(fading == false){
       fading = true;
       //fadeOutRectange(0, 0, 512, 288, 31, 61, 92);
-      var r = 31, g = 61, b = 92;
+      var r = 255, g = 255, b = 255;
       var self = document.getElementById("viewport").getContext("2d");
       var steps = 50;
-      var dr = (255 - r) / steps; // how much red should be added each time
-      var dg = (255 - g) / steps; // green
-      var db = (255 - b) / steps; // blue
+      var dr = (31 - r) / steps; // how much red should be added each time
+      var dg = (61 - g) / steps; // green
+      var db = (92 - b) / steps; // blue
       var count = 0; // step counter
       var interval = setInterval(function() {
           self.fillStyle = 'rgb(' + Math.round(r + dr * count) + ',' + Math.round(g + dg * count) + ',' + Math.round(b + db * count) + ')';
