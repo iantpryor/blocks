@@ -32,7 +32,7 @@ Game.draw = function() {
     timersetflash = true;
   }*/
   
-  if(light == true ){ 
+  if(light == true && fading == false){ 
     this.context.fillStyle = "#FFFFFF";
     this.context.fillRect(0, 0, 512, 288);
     
@@ -53,15 +53,16 @@ Game.draw = function() {
           if(count === steps) { // stop if done
               clearInterval(interval);
               fading = false;
+              light = false;
           }
       }, 30);
     }
     
-    setTimeout(function() {
+    /*setTimeout(function() {
       light = false;
       timerset = false;
       flash = 0;
-    }, 3000);
+    }, 3000);*/
   }
   
   
