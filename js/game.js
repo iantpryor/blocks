@@ -13,7 +13,7 @@ Game.initialize = function() {
   
 };
 
-function fadeOutRectangle(x, y, w, h, r, g, b) {
+Game.fadeOutRectange = function(x, y, w, h, r, g, b) {
   var self = this;
   var steps = 50,
     dr = (255 - r) / steps, // how much red should be added each time
@@ -31,7 +31,7 @@ function fadeOutRectangle(x, y, w, h, r, g, b) {
             fading = false;
         }
     }, 30);
-}
+};
 
 Game.draw = function() {
     
@@ -54,7 +54,7 @@ Game.draw = function() {
     
     if(fading == false){
       fading = true;
-      fadeOutRectangle(0, 0, 512, 288, 31, 61, 92);
+      this.fadeOutRectangle(0, 0, 512, 288, 31, 61, 92);
     }
     
     setTimeout(function() {
