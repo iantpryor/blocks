@@ -22,12 +22,12 @@ Rect.prototype.update = function() {
   }*/
   
   if(player.input.left == true){
-    this.veleftright = 5;
+    this.veleftright = 1;
     if(player.input.jump == true){
       this.veleftright += 5;
     }
   }else if(player.input.right == true){
-    this.veleftright = -5;
+    this.veleftright = -1;
     if(player.input.jump == true){
       this.veleftright -= 5;
     }
