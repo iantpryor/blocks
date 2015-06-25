@@ -9,11 +9,6 @@ body {
 canvas {
   width: 1024;
   height: 576;
-  padding-left: 0px;
-  padding-right: 0px;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
   border: 1px solid #000000;
 }
 div {
