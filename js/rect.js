@@ -37,4 +37,5 @@ Rect.prototype.update = function() {
   
   this.y += this.velocity;
   this.x += this.veleftright;
+  this.tail = this.x + 32; 
 };
