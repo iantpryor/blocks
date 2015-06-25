@@ -14,7 +14,7 @@
     <canvas id="viewport"></canvas>
 
     <script type="text/javascript" charset="utf-8">
-      //var renderStats = new Stats();
+      var renderStats = new Stats();
       //document.body.appendChild(renderStats.domElement);
 
       //var updateStats = new Stats();
@@ -85,7 +85,7 @@
           loops = 0;
 
           while ((new Date).getTime() > nextGameTick) {
-            updateStats.update();
+            //updateStats.update();
             Game.update();
             nextGameTick += skipTicks;
             loops++;
