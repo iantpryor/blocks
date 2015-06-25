@@ -20,6 +20,7 @@
       var updateStats = new Stats();
       document.body.appendChild(updateStats.domElement);
       var canvas = document.getElementById("viewport");
+      canvas.width = window.innerWidth;
       var KEY = {
         BACKSPACE: 8,
         TAB:       9,
