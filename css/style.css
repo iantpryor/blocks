@@ -7,6 +7,8 @@ body {
   position: relative;
 }
 canvas {
+  width: 1024;
+  height: 576;
   padding-left: 0px;
   padding-right: 0px;
   margin-left: auto;
