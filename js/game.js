@@ -78,7 +78,7 @@ Game.update = function() {
       }else{
         this.entities[i].x = this.entities[i-1].tail;
       }
-    } else if (this.entities[i].x > 512 + 32) {
+    } else if (this.entities[i].x > 512) {
       if(i == 16){
         this.entities[i].x = this.entities[0].tail - 64;
       }else{
