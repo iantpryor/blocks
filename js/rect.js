@@ -1,6 +1,6 @@
 function Rect(initX) {
   this.x = initX;
-  this.y = 288 - 32;
+  this.y = 288 - 24;
   this.velocity = 0;
   this.veleftright = 0;
   this.tail = this.x + 32;
