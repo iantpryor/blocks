@@ -8,7 +8,7 @@ function Rect(initX) {
 
 Rect.prototype.draw = function(context) {
   //context.beginPath();
-  context.strokeRect(this.x, this.y, 32, 32);
+  context.fillRect(this.x, this.y, 32, 32);
   //context.stroke();
   //context.closePath();
 };
