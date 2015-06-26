@@ -1,7 +1,6 @@
 function Rect(initX) {
   this.x = initX;
   this.y = 288 - 24;
-  this.velocity = 0;
   this.veleftright = 0;
   this.tail = this.x + 32;
   this.level = 0; //rand
@@ -33,7 +32,7 @@ Rect.prototype.update = function() {
     this.veleftright = 0;
   }
   
-  this.y += this.velocity;
   this.x += this.veleftright;
-  this.tail = this.x + 32; 
+  this.tail = this.x + 32;
+  this.y = 288 - 24 - this.level;
 };
