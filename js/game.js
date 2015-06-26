@@ -85,7 +85,7 @@ Game.update = function() {
       }else{
         this.entities[i].x = this.entities[i+1].tail - 64;
       }
-      this.entities[i].level = this.entites[i].prevLevel; //return to prev.
+      this.entities[i].level = this.entities[i].prevLevel; //return to prev.
     }
   }
 };
