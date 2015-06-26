@@ -1,10 +1,10 @@
 function Rect(initX) {
+  this.level = Math.floor(Math.random() * (8 - 0 + 1)) + 0; // Rand between 8 and 0
+  this.prevLevel = this.level;
   this.x = initX;
-  this.y = 288 - 24;
+  this.y = 288 - 24 - this.level;
   this.veleftright = 0;
   this.tail = this.x + 32;
-  this.level = 0; //rand
-  this.prevLevel = this.level;
 };
 
 Rect.prototype.draw = function(context) {
