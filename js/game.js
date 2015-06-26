@@ -78,7 +78,8 @@ Game.update = function() {
       }else{
         this.entities[i].x = this.entities[i-1].tail;
       }
-      this.entities[i].level = 0; //rand between 1 and 8;
+      this.entities[i].prevLevel = this.entities[i].level; //save the prev value
+      this.entities[i].level = Math.floor(Math.random() * (8 - 1 + 1)) + 1; //rand between 1 and 8
     } else if (this.entities[i].x > 512) {
       if(i == 16){
         this.entities[i].x = this.entities[0].tail - 64;
