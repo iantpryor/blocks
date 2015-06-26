@@ -22,12 +22,12 @@ Rain.prototype.update = function() {
     this.x -= 256;  //this will put it in the range we want
   }
   if(player.input.left == true){
-    this.veleftright += 5;
+    this.veleftright = 4;
     if(player.input.jump == true){
       this.veleftright += 5;
     }
   }else if(player.input.right == true){
-    this.veleftright -= -5;
+    this.veleftright = -6;
     if(player.input.jump == true){
       this.veleftright -= 5;
     }
