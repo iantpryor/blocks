@@ -3,7 +3,7 @@ function Rain() {
   this.x -= 256;  //this will put it in the range we want
   this.y = Math.floor(Math.random() * (288 - 0  + 1)) + 0;
   this.velocity = 5;
-  this.veleftright = 0;
+  this.veleftright = -1;
 };
 
 Rain.prototype.draw = function(context) {
@@ -32,7 +32,7 @@ Rain.prototype.update = function() {
       this.veleftright -= 5;
     }
   }else{
-    this.veleftright = 0;
+    this.veleftright = -1;
   }
   
   this.y += this.velocity;
