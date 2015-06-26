@@ -78,12 +78,14 @@ Game.update = function() {
       }else{
         this.entities[i].x = this.entities[i-1].tail;
       }
+      this.entities[i].level = 0; //rand between 1 and 8;
     } else if (this.entities[i].x > 512) {
       if(i == 16){
         this.entities[i].x = this.entities[0].tail - 64;
       }else{
         this.entities[i].x = this.entities[i+1].tail - 64;
       }
+      this.entities[i].level = this.entites[i].prevLevel; //return to prev.
     }
   }
 };
